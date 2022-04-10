@@ -1,10 +1,8 @@
 package com.nn.BookStoreMaven.Model;
 
-import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import lombok.experimental.FieldNameConstants;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -19,7 +17,7 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = true)
+    @Column(nullable = false, unique = true)
     private String name;
 
     @Column(name = "p_date", nullable = true)
@@ -27,4 +25,5 @@ public class Book {
 
     @Column(nullable = true)
     private double price;
+
 }
